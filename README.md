@@ -1,4 +1,4 @@
-# startup name
+# Paperback Society
 
 ### Elevator pitch
 
