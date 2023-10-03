@@ -27,3 +27,13 @@ I will  use the following technologies:
     - making new posts
 - **DB** - store users, posts, and past books
 - **React** - the whole site will use the React framework
+
+### HTML Deliverable
+
+For this deliverable I built out the following:
+- **HTML pages** - I built out 4 pages, a home page, a forum page to login and view posts, a profile page to see user info, and an about page
+- **Links** - each page has a header with links to all the other pages
+- **Text** - the forum page include sample posts to view
+- **Image** - I included an image on the about page to show how that may look throughout the site
+- **WebSocket** - the actual user log in would be done through a web socket, as well as potential links to books on online marketplaces
+- **Database** - the forum posts would be stored in a database
