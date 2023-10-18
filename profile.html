@@ -3,54 +3,106 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Scores</title>
+    <title>Paperback Society - Profile</title>
     <link rel="icon" href="favicon.ico" />
+
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="profile.css" />
+
+    <!-- Include bootstrap CSS framework -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+        crossorigin="anonymous"
+    />
 </head>
-<body>
-<header>
-    <h1>Paperback Society</h1>
+<body class="bg-dark text-light">
+    <header class="container-fluid">
+        <nav class="navbar fixed-top navbar-dark">
+            <a class="navbar-brand" href="#">Paperback Society</a>
+            <menu class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="forum.html">Forum</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="profile.html">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+            </menu>
+        </nav>
+    </header>
 
-    <!-- Navigation elements -->
-    <nav>
-        <!-- Menu is a semantic alternative to <ul> that represents an interaction -->
-        <menu>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="forum.html">Forum</a></li>
-            <li><a href="profile.html">Profile</a></li>
-            <li><a href="about.html">About</a></li>
-        </menu>
-    </nav>
-
-    <!-- Since we don't have the ability to style we use old style HTML to give some visual formatting -->
-    <hr />
-</header>
-
-<main>
-    <table>
-        <thead>
-        <tr>
-            <th>Username</th>
-            <th>Date joined</th>
-            <th>Number of books read</th>
-            <th>Number of posts</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>username</td>
-            <td>Oct 2, 2023</td>
-            <td>2</td>
-            <td>13</td>
-        </tr>
-        </tbody>
-    </table>
+<main class="container-fluid bg-secondary text-center">
+    <section class="h-75 w-75 bg-light text-dark row">
+        <div class="col-4">
+            <div class="text-center" style="border-radius: 2em">
+                <img src="https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg"
+                     alt="Avatar" class="img-fluid my-5" style="width: 100px; border-radius: 0.5em" />
+                <h1 class="fa">username</h1>
+                <i class="fa fa-edit ">user since Oct. 2, 2023</i>
+                <hr class="mt-0 mb-4">
+            </div>
+            <div class="h-50">
+                <table class="table table-borderless mx-auto">
+                    <thead>
+                    <tr>
+                        <th scope="col">Username</th>
+                        <th scope="col">Join Date</th>
+                        <th scope="col">Books</th>
+                        <th scope="col">Posts</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>username</td>
+                        <td>Oct 2, 2023</td>
+                        <td>2</td>
+                        <td>13</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-8">
+            <div class="card-body p-4 d-flex justify-content-end">
+                <button type="button" class="btn btn-secondary">Edit</button>
+            </div>
+            <div class="text-lg-start p-4">
+                <h3>About</h3>
+                <hr class="mt-0 mb-4">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+            </div>
+            <div class="text-lg-start p-4">
+                <h3>Recent Posts</h3>
+                <hr class="mt-0 mb-4">
+                <div class="row p-2 mx-auto">
+                    <div class="col-5 border border-dark rounded">
+                        <h6>Post Title</h6>
+                        <hr class="mt-0 mb-0">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                    <div class="col-5 border border-dark rounded offset-2">
+                        <h6>Post Title</h6>
+                        <hr class="mt-0 mb-0">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </main>
 
-<footer>
-    <hr />
-    <span class="text-reset">Author Name(s)</span>
-    <br />
-    <a href="https://github.com/bchorman/startup">GitHub</a>
-</footer>
+    <footer class="bg-dark text-white-50">
+        <div class="container-fluid">
+            <span class="text-reset">Brett Horman</span>
+            <a class="text-reset" href="https://github.com/bchorman/startup">GitHub</a>
+        </div>
+    </footer>
 </body>
 </html>
