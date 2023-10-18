@@ -37,3 +37,10 @@ For this deliverable I built out the following:
 - **Image** - I included an image on the about page to show how that may look throughout the site
 - **WebSocket** - the actual user log in would be done through a web socket, as well as potential links to books on online marketplaces
 - **Database** - the forum posts would be stored in a database
+
+### CSS Deliverable
+
+For this deliverable, I built out the following:
+- **Unified styling** - All pages have the same header and footer and an overall similar visual style
+- **Bootstrap** - Each page uses Bootstrap to style different elements, helping the unity of the overall project
+- **Adaptability** - The pages work with different screen sizes and display all necessary information
