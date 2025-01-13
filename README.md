@@ -11,6 +11,8 @@ and discuss the goings-on.
 
 ## Design
 
+![Mockup design](mockup.png)
+
 ## Key Features
 
 ## Technologies
