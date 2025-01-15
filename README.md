@@ -15,4 +15,24 @@ and discuss the goings-on.
 
 ## Key Features
 
+- Secure login over HTTPS
+- Ability to use user's location or input location
+- Real time weather data
+- Up to date chat from other users
+
 ## Technologies
+
+I will use the required technologies in the following ways:
+
+- HTML - Use correct HTML structure for pages. Login page and data/chat page.
+- CSS - Styling that looks good and stays consistent on different screen sizes,
+ unified color scheme, works in light and dark mode
+- React - Provides login screen, weather data element, and chat component
+- Service - Backend service with endpoints for:
+  - login
+  - view user profile
+  - [AccuWeather API](https://developer.accuweather.com/apis)
+    - Location
+    - Current Conditions
+- DB - Store users and chat logs. Register and log in users with secure credentials
+- WebSocket - Chat functionality for all users viewing a specific location in real time.
