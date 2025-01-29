@@ -36,3 +36,15 @@ I will use the required technologies in the following ways:
     - Current Conditions
 - DB - Store users and chat logs. Register and log in users with secure credentials
 - WebSocket - Chat functionality for all users viewing a specific location in real time.
+
+## HTML Deliverable
+
+For this deliverable, I built out the structure of my website with HTML.
+
+- [x] **HTML pages** - four HTML pages that show the homepage, a chat page, a profile page, and an about page
+- [x] **Links** - all pages link to each other and logging in takes the user to the chat page
+- [x] **Text** - all the pages include text
+- [x] **Images** - I included a blank profile picture on the profile page
+- [x] **DB/Login** - there is a form for a user to login or create an account. Each user has a location associated
+- [x] **WebSocket** - the realtime chat that allows a user to see others' messages
+- [x] **External API** a box on the homepage that includes weather data
