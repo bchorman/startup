@@ -1,0 +1,12 @@
+.picture-box {
+  background-color: #f1f1f1;
+  padding: 20px;
+  border: 1px solid #e1e1e1;
+  border-radius: 5px;
+  height: 10em;
+}
+
+/* #picture img {
+  width: calc(100% + 1em);
+  height: calc(100% + 1em);
+} */
