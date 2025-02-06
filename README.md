@@ -48,3 +48,15 @@ For this deliverable, I built out the structure of my website with HTML.
 - [x] **DB/Login** - there is a form for a user to login or create an account. Each user has a location associated
 - [x] **WebSocket** - the realtime chat that allows a user to see others' messages
 - [x] **External API** a box on the homepage that includes weather data
+
+## CSS Deliverable
+
+For this deliverable, I properly styled all pages into their final appearance.
+
+- [x] **Header, footer, and main body**
+- [x] **Navigation elements** - all elements are styled the same and different from the default HTML
+- [x] **Responsive to window resizing** - the website looks good on different window sizes
+- [x] **Application elements** - used contrast and spacing for elements
+- [x] **Application text content** - consistent fonts
+- [x] **Images** - images are included and styled
+  - [] **About page image** - this image still needs to have its sizing fixed
