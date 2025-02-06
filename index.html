@@ -9,38 +9,47 @@
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
             rel="stylesheet"
-            integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+            integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
             crossorigin="anonymous"
         />
     </head>
     <body class="bg-dark text-light">
         <header class="container-fluid">
-            <a class="navbar-brand" href="#">WeatherChat</a>
-
-            <nav>
-                <menu>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="chat.html">Chat</a></li>
-                    <li><a href="profile.html">Profile</a></li>
-                    <li><a href="about.html">About</a></li>
+            <nav class="navbar fixed-top navbar-dark">
+                <a class="navbar-brand" href="">WeatherChat</a>
+                <menu class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="chat.html">Chat</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="profile.html">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li id="login-button" class="btn btn-primary btn-sm ms-auto me-3">
+                        <a class="nav-link" href="login.html">Login</a>
+                    </li>
                 </menu>
-
-            <hr />
+            </nav>
         </header>
 
-        <main>
+        <main class="container-fluid bg-secondary text-center">
             <h1>Welcome to WeatherChat</h1>
             <form method="get" action="chat.html">
-                <div>
-                    <span>Username</span>
-                    <input type="text" placeholder="username" />
+                <div class="input-group mb-3">
+                    <span class="input-group-text">Username</span>
+                    <input class="form-control" type="text"/>
                 </div>
-                <div>
-                    <span>Password</span>
-                    <input type="password" placeholder="password" />
+                <div class="input-group mb-3">
+                    <span class="input-group-text">Password</span>
+                    <input class="form-control" type="password"/>
                 </div>
-                <button type="submit">Login</button>
-                <button type="submit">Create</button>
+                <button type="submit" class="btn btn-primary">Login</button>
+                <button type="submit" class="btn btn-secondary">Create</button>
             </form>
 
             <hr />
@@ -48,9 +57,9 @@
                 <h2>Current Weather</h2>
                 <h4>Provo, UT</h4>
                 <form method="get" action="index.html">
-                    <span>Enter location:</span>
+                    <span class="input-group mb-3">Enter location:</span>
                     <input type="text" placeholder="Provo, UT" />
-                    <button type="submit">Search</button>
+                    <button type="submit" class="btn btn-primary">Search</button>
                     <table>
                         <tr>
                             <td>Temperature</td>
@@ -69,11 +78,11 @@
             </div>
         </main>
 
-        <footer>
-            <hr />
-            <span>Brett Horman</span>
-            <br />
-            <a href="https://github.com/bchorman/startup">GitHub</a>
+        <footer class="bg-dark text-white-50">
+            <div class="container-fluid">
+                <span class="text-reset">Brett Horman</span>
+                <a class="text-reset" href="https://github.com/bchorman/startup">GitHub</a>
+            </div>
         </footer>
     </body>
 </html>
