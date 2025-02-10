@@ -196,3 +196,45 @@ function sayHello() {
 ```
 
 Notice that we call the `sayHello` and `sayGoodbye` JavaScript functions from the HTML in the `onclick` attribute of the button element. Special attributes like `onclick` automatically create event listeners for different DOM events that call the code contained in the attribute's value. The code specified by the attribute value can be a simple call to a function or any JavaScript code.
+
+### Node
+
+Main steps of Node:
+
+1. Create your project directory
+1. Initialize it for use with NPM by running `npm init -y`
+1. Make sure `.gitignore` file contains `node_modules`
+1. Install any desired packages with `npm install <package name here>`
+1. Add `require('<package name here>')` to your application's JavaScript
+1. Use the code the package provides in your JavaScript
+1. Run your code with `node index.js`
+
+#### Watch
+
+To make it so that changes are propagated as they are made, do this. Start Node with the `watch` option. This causes Node to watch all your source code files and automatically reload itself if anything changes.
+
+You can experiment with this by starting node with the `--watch` parameter
+
+```sh
+node --watch main.js
+```
+
+With VS Code you can create a launch configuration that specifies the watch parameter when every you debug with VS Code. In VS Code press `CTRL-SHIFT-P` (on Windows) or `⌘-SHIFT-P` (on Mac) and type the command `Debug: Add configuration`. Select the `Node.js` option. This will create a launch configuration named `.vscode/launch.json`. Modify the configuration so that it includes the `--watch` parameter. This should look something like the following.
+
+```json
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Program",
+      "skipFiles": ["<node_internals>/**"],
+      "runtimeArgs": ["--watch"],
+      "program": "${workspaceFolder}/main.js"
+    }
+  ]
+}
+```
+
+Now when you press `F5` to start debugging VS Code will start up `main.js` and automatically restart node each time you modify your code.
