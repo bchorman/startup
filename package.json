@@ -1,0 +1,33 @@
+{
+  "name": "startup",
+  "version": "1.0.0",
+  "description": "This is an application that allows users to view weather data related to their location and chat with others about it.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bchorman/startup.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bchorman/startup/issues"
+  },
+  "homepage": "https://github.com/bchorman/startup#readme",
+  "devDependencies": {
+    "vite": "^6.1.0"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.3",
+    "react": "^19.0.0",
+    "react-bootstrap": "^2.10.9",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.1.5",
+    "startup": "file:"
+  }
+}
