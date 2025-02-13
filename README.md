@@ -64,3 +64,7 @@ For this deliverable, I properly styled all pages into their final appearance.
 ## React Deliverable
 
 For this deliverable, I used JavaScript and React so that the application works as a single page application.
+
+- [x] **Bundled and transpiled**
+- [x] **Components** - all components have a baseline or mock implementation with working navigation buttons
+- [x] **Routing** - routing between different components
