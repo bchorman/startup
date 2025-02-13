@@ -9,14 +9,17 @@ import { Login } from './login/login';
 import { Profile } from './profile/profile';
 
 export default function App() {
-  return <div classNameName="body bg-dark text-light">
-            <BrowserRouter>
+  return (
+        <BrowserRouter>
+            <div className="body bg-dark text-light">
                 <header className="container-fluid">
                     <nav className="navbar fixed-top navbar-dark">
-                        <a className="navbar-brand" href="">WeatherChat</a>
+                        <div className="navbar-brand">
+                            WeatherChat
+                        </div>
                         <menu className="navbar-nav">
                             <li className="nav-item">
-                                <NavLink className="nav-link" to="home">Home</NavLink>
+                                <NavLink className="nav-link" to="">Home</NavLink>
                             </li>
                             <li className="nav-item">
                                 <NavLink className="nav-link" to="chat">Chat</NavLink>
@@ -49,8 +52,9 @@ export default function App() {
                         <a className="text-reset" href="https://github.com/bchorman/startup">GitHub</a>
                     </div>
                 </footer>
-            </BrowserRouter>
-        </div>;
+            </div>
+        </BrowserRouter>
+  );
 }
 
 function NotFound() {
