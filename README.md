@@ -60,3 +60,7 @@ For this deliverable, I properly styled all pages into their final appearance.
 - [x] **Application text content** - consistent fonts
 - [x] **Images** - images are included and styled
   - [] **About page image** - this image still needs to have its sizing fixed
+
+## React Deliverable
+
+For this deliverable, I used JavaScript and React so that the application works as a single page application.

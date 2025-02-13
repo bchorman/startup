@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 export function Home() {
   return (
@@ -13,8 +14,8 @@ export function Home() {
                     <span className="input-group-text">Password</span>
                     <input className="form-control" type="password"/>
                 </div>
-                <button type="submit" className="btn btn-primary">Login</button>
-                <button type="submit" className="btn btn-secondary">Create</button>
+                <NavLink type="submit" className="btn btn-primary" to="chat">Login</NavLink>
+                <NavLink type="submit" className="btn btn-secondary" to="chat">Create</NavLink>
             </form>
 
             <hr />
@@ -24,7 +25,7 @@ export function Home() {
                 <form method="get" action="index.html">
                     <span className="input-group mb-3">Enter location:</span>
                     <input type="text" placeholder="Provo, UT" />
-                    <button type="submit" className="btn btn-primary">Search</button>
+                    <NavLink type="submit" className="btn btn-primary" to="">Search</NavLink>
                     <table>
                         <tr>
                             <td>Temperature</td>

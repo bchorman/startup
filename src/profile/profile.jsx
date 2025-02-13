@@ -1,5 +1,6 @@
 import React from 'react';
 import './profile.css';
+import { NavLink } from 'react-router-dom';
 
 export function Profile() {
   return (
@@ -10,7 +11,7 @@ export function Profile() {
             <p>Friends: 123</p>
             <p>Interests: Weather, Chatting</p>
             <form>
-                <button className="btn btn-primary" type="submit">Edit</button>
+                <NavLink className="btn btn-primary" type="submit" to="">Edit</NavLink>
             </form>
         </main>
   );
