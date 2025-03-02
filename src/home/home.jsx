@@ -2,26 +2,40 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 export function Home({ setUsername }) {
-    // const [username, setUsernameState] = React.useState(localStorage.getItem("username") || null);
+    const [location, setLocation] = React.useState(localStorage.getItem("location") || "Provo, UT");
     const [inputText, setInputText] = React.useState("");
+    const [locationInput, setLocationInput] = React.useState("");
 
-        function loginUser() {
-            if (inputText.trim()) {
-                localStorage.setItem("username", inputText);
-                setUsername(inputText);
-            }
+    function loginUser() {
+        if (inputText.trim()) {
+            localStorage.setItem("username", inputText);
+            setUsername(inputText);
         }
+    }
 
-        function createUser() {
-            if (inputText.trim()) {
-                localStorage.setItem("username", inputText);
-                setUsername(inputText);
-            }
+    function createUser() {
+        if (inputText.trim()) {
+            localStorage.setItem("username", inputText);
+            setUsername(inputText);
         }
+    }
 
-        function textChange(event) {
-            setInputText(event.target.value);
+    function textChange(event) {
+        setInputText(event.target.value);
+    }
+
+    function updateLocation(event) {
+        setLocationInput(event.target.value);
+    }
+
+    function setNewLocation(event) {
+        event.preventDefault();
+        if (locationInput.trim()) {
+            setLocation(locationInput);
+            localStorage.setItem("location", locationInput);
+            setLocationInput("");
         }
+    }
 
     return (
         <main className="container-fluid bg-secondary text-center">
@@ -47,10 +61,10 @@ export function Home({ setUsername }) {
                 {!localStorage.getItem("username") && <hr />}
                 <div>
                     <h2>Current Weather</h2>
-                    <h4>Provo, UT</h4>
-                    <form method="get" action="index.html">
+                    <h4>{location}</h4>
+                    <form onSubmit={setNewLocation}>
                         <span className="input-group mb-3">Enter location:</span>
-                        <input type="text" placeholder="Provo, UT" />
+                        <input type="text" placeholder="Provo, UT" value={locationInput} onChange={updateLocation}/>
                         <NavLink type="submit" className="btn btn-primary" to="">Search</NavLink>
                         <table>
                             <tbody>
