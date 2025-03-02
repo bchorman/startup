@@ -61,10 +61,18 @@ For this deliverable, I properly styled all pages into their final appearance.
 - [x] **Images** - images are included and styled
   - [] **About page image** - this image still needs to have its sizing fixed
 
-## React Deliverable
+## React Deliverable Phase 1
 
 For this deliverable, I used JavaScript and React so that the application works as a single page application.
 
 - [x] **Bundled and transpiled**
 - [x] **Components** - all components have a baseline or mock implementation with working navigation buttons
 - [x] **Routing** - routing between different components
+
+## React Deliverable Phase 2
+
+For this deliverable, I implemented some basic functionality using JavaScript and React. There are also placeholders for future expansions.
+
+- [x] **Login/Logout** - a user can log in or log out, and the username will be stored or deleted
+- [x] **Chat** - a user can send messages in the chat, while random messages appear as a mock of a true chat
+- [x] **Location search** - a user can set their location, which in the future will be used for searching the weather at that location
