@@ -53,18 +53,20 @@ export function Home({ setUsername }) {
                         <input type="text" placeholder="Provo, UT" />
                         <NavLink type="submit" className="btn btn-primary" to="">Search</NavLink>
                         <table>
-                            <tr>
+                            <tbody>
+                                <tr>
                                 <td>Temperature</td>
                                 <td>70&deg;F</td>
-                            </tr>
-                            <tr>
+                                </tr>
+                                <tr>
                                 <td>Humidity</td>
                                 <td>30%</td>
-                            </tr>
-                            <tr>
+                                </tr>
+                                <tr>
                                 <td>Wind</td>
                                 <td>5 mph</td>
-                            </tr>
+                                </tr>
+                            </tbody>
                         </table>
                     </form>
                 </div>

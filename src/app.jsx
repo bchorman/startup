@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './app.css';
 import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
@@ -7,9 +7,15 @@ import { Chat } from './chat/chat';
 import { Home } from './home/home';
 import { Login } from './login/login';
 import { Profile } from './profile/profile';
+import { Dropdown } from './dropdown/dropdown';
 
 export default function App() {
     const [username, setUsername] = useState(localStorage.getItem("username") || null);
+
+    function logoutUser() {
+        localStorage.removeItem("username");
+        setUsername(null);
+    }
 
     useEffect(() => {
         if (username) {
@@ -30,20 +36,28 @@ export default function App() {
                             </div>
                             <menu className="navbar-nav">
                                 <li className="nav-item">
-                                    <NavLink className="nav-link" to="">Home</NavLink>
+                                    <NavLink className="nav-link" to="">
+                                        Home
+                                    </NavLink>
                                 </li>
                                 <li className="nav-item">
-                                    {username && <NavLink className="nav-link" to="chat">Chat</NavLink>}
+                                    {username && <NavLink className="nav-link" to="chat">
+                                        Chat
+                                    </NavLink>}
                                 </li>
-                                {/* <li className="nav-item">
-                                    {username && <NavLink className="nav-link" to="profile">Profile</NavLink>}
-                                </li> */}
                                 <li className="nav-item">
-                                    <NavLink className="nav-link" to="about">About</NavLink>
+                                    <NavLink className="nav-link" to="about">
+                                        About
+                                    </NavLink>
                                 </li>
                                 <li id="login-button" className="nav-item ms-auto me-3">
-                                    {username == null && <NavLink className="nav-link" to="login">Login</NavLink>}
-                                    {username && <NavLink className="nav-link" to="profile">{username}</NavLink>}
+                                    {username ? (
+                                        <Dropdown username={username} onLogout={() => logoutUser()} />
+                                    ) : (
+                                        <NavLink className="nav-link" to="login">
+                                            Login
+                                        </NavLink>
+                                    )}
                                 </li>
                             </menu>
                         </nav>
