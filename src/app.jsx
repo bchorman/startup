@@ -6,11 +6,14 @@ import { About } from './about/about';
 import { Chat } from './chat/chat';
 import { Home } from './home/home';
 import { Login } from './login/login';
+import { AuthState } from './login/authState';
 import { Profile } from './profile/profile';
 import { Dropdown } from './dropdown/dropdown';
 
 export default function App() {
     const [username, setUsername] = useState(localStorage.getItem("username") || null);
+    const currentAuthState = username ? AuthState.Authenticated : AuthState.Unauthenticated;
+    const [authState, setAuthState] = React.useState(currentAuthState);
 
     function logoutUser() {
         localStorage.removeItem("username");
@@ -64,10 +67,21 @@ export default function App() {
                     </header>
 
                     <Routes>
-                        <Route path='/' element={<Home setUsername={setUsername}/>} exact />
+                        <Route path='/' element={<Home authState={authState}/>} exact />
                         <Route path='/about' element={<About />} />
                         <Route path='/chat' element={<Chat />} />
-                        <Route path='/login' element={<Login setUsername={setUsername}/>} />
+                        <Route
+                            path='/login'
+                            element={
+                                <Login
+                                    username={username}
+                                    authState={authState}
+                                    onAuthChange={(username, authState) => {
+                                        setAuthState(authState);
+                                        setUsername(username);
+                                    }}
+                                />
+                            } />
                         <Route path='/profile' element={<Profile />} />
                         <Route path='*' element={<NotFound />} />
                     </Routes>

@@ -76,3 +76,13 @@ For this deliverable, I implemented some basic functionality using JavaScript an
 - [x] **Login/Logout** - a user can log in or log out, and the username will be stored or deleted
 - [x] **Chat** - a user can send messages in the chat, while random messages appear as a mock of a true chat
 - [x] **Location search** - a user can set their location, which in the future will be used for searching the weather at that location
+
+## Service Deliverable
+
+For this deliverable, I implemented backend endpoints for logging in and out, as well as sending messages. There is also a 3rd party API that gets the weather data.
+
+- [x] **Node.js/Express** - implemented
+- [x] **Static middleware for frontend** - implemented
+- [x] **Calls to third party endpoint** - calls a weather API to get realtime data
+- [x] **Login/logout** - a user can create an account, log in, and log out
+- [x] **Chat** - a placeholder for a user to post messages, will become a WebSocket

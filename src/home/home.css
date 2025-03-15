@@ -1,0 +1,7 @@
+.picture {
+    height: calc(150px + 1em);
+    margin: 0 auto;
+    margin-bottom: 1em;
+    overflow: hidden;
+    background: rgb(86, 89, 93);
+}

@@ -7,6 +7,7 @@ const app = express();
 const authCookieName = 'token';
 
 let users = [];
+let messages = [];
 
 const port = process.argv.length > 2 ? process.argv[2] : 4000;
 
@@ -66,6 +67,23 @@ const verifyAuth = async (req, res, next) => {
       res.status(401).send({ msg: 'Unauthorized' });
     }
   };
+
+// send a message
+apiRouter.post('/message', verifyAuth, (req, res) => {
+    const user = users.find((u) => u.token === req.cookies[authCookieName]);
+    const message = {
+      user: user.username,
+      text: req.body.text,
+      time: new Date(),
+    };
+    messages.push(message);
+    res.send(message);
+  });
+
+// get messages
+apiRouter.get('/messages', verifyAuth, (req, res) => {
+    res.send(messages);
+  });
 
 // Default error handler
 app.use(function (err, req, res, next) {
