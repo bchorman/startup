@@ -8,7 +8,7 @@ export function Home({ authState }) {
     const [location, setLocation] = React.useState(localStorage.getItem("location") || "Provo, UT");
     const [locationInput, setLocationInput] = React.useState("");
     const [weather, setWeather] = React.useState(localStorage.getItem("weather") || null);
-    const weatherKey = "";
+    const weatherKey = "865521f19b454881ad1183727251503";
 
     function updateLocation(event) {
         setLocationInput(event.target.value);
