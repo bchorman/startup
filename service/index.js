@@ -2,12 +2,10 @@ const cookieParser = require('cookie-parser');
 const bcrypt = require('bcryptjs');
 const express = require('express');
 const uuid = require('uuid');
+const DB = require('./database.js');
 
 const app = express();
 const authCookieName = 'token';
-
-let users = [];
-let messages = [];
 
 const port = process.argv.length > 2 ? process.argv[2] : 4000;
 
@@ -40,6 +38,7 @@ apiRouter.post('/auth/login', async (req, res) => {
   if (user) {
     if (await bcrypt.compare(req.body.password, user.password)) {
       user.token = uuid.v4();
+      await DB.updateUser(user);
       setAuthCookie(res, user.token);
       res.send({ username: user.username });
       return;
@@ -53,6 +52,7 @@ apiRouter.delete('/auth/logout', async (req, res) => {
   const user = await findUser('token', req.cookies[authCookieName]);
   if (user) {
     delete user.token;
+    DB.updateUser(user);
   }
   res.clearCookie(authCookieName);
   res.status(204).end();
@@ -69,19 +69,20 @@ const verifyAuth = async (req, res, next) => {
   };
 
 // send a message
-apiRouter.post('/message', verifyAuth, (req, res) => {
-    const user = users.find((u) => u.token === req.cookies[authCookieName]);
+apiRouter.post('/message', verifyAuth, async (req, res) => {
+    const user = await DB.getUserByToken(req.cookies[authCookieName]);
     const message = {
       user: user.username,
       text: req.body.text,
       time: new Date(),
     };
-    messages.push(message);
+    DB.addMessage(message);
     res.send(message);
   });
 
 // get messages
-apiRouter.get('/messages', verifyAuth, (req, res) => {
+apiRouter.get('/messages', verifyAuth, async (req, res) => {
+    messages = await DB.getMessages();
     res.send(messages);
   });
 
@@ -103,7 +104,7 @@ async function createUser(username, password) {
     password: passwordHash,
     token: uuid.v4(),
   };
-  users.push(user);
+  await DB.addUser(user);
 
   return user;
 }
@@ -111,7 +112,11 @@ async function createUser(username, password) {
 async function findUser(field, value) {
     if (!value) return null;
   
-    return users.find((u) => u[field] === value);
+    if (field === 'token') {
+      return DB.getUserByToken(value);
+    } else {
+      return DB.getUser(value);
+    }
   }
 
   function setAuthCookie(res, authToken) {
