@@ -86,3 +86,11 @@ For this deliverable, I implemented backend endpoints for logging in and out, as
 - [x] **Calls to third party endpoint** - calls a weather API to get realtime data
 - [x] **Login/logout** - a user can create an account, log in, and log out
 - [x] **Chat** - a placeholder for a user to post messages, will become a WebSocket
+
+## DB Deliverable
+
+For this deliverable, I created a MongoDB database to store user information and chat messages. The messages will not be stored here long term, but it is a good mock-up for the WebSocket implementation that will exist in the future.
+
+- [x] **MongoDB database** - all data is stored in database
+- [x] **Credentials in database** - done
+- [x] **Messages in database** - done, will be removed in future
