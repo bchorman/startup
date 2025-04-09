@@ -1,52 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import './chat.css'
 
 export function Chat({ webSocket }) {
   const [name, setName] = useState('');
-
-  // useEffect(() => {
-  //   fetchMessages();
-  //   const interval = setInterval(fetchMessages, 5000);
-  //   return () => clearInterval(interval);
-  // }, []);
-
-  // const fetchMessages = async () => {
-  //   try {
-  //     const response = await fetch("/api/messages", {
-  //       method: "GET",
-  //       credentials: "include",
-  //     });
-  
-  //     if (response.ok) {
-  //       const data = await response.json();
-  //       setMessages(Array.isArray(data) ? data : []); // Ensure it's always an array
-  //     }
-  //   } catch (error) {
-  //     console.error("Error fetching messages:", error);
-  //     setMessages([]); // Fallback to an empty array
-  //   }
-  // };
-  
-
-  // const sendMessage = async (event) => {
-  //   event.preventDefault();
-  //   if (!inputText.trim()) return;
-
-  //   const response = await fetch("/api/message", {
-  //     method: "POST",
-  //     credentials: "include",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify({ text: inputText }),
-  //   });
-
-  //   if (response.ok) {
-  //     setInputText("");
-  //     fetchMessages();
-  //   } else {
-  //     console.error("Failed to send message");
-  //   }
-  // };
 
   return (
     <main className="container-fluid bg-secondary text-center">
@@ -115,7 +71,7 @@ function Conversation({ webSocket }) {
 
   const chatEls = chats.map((chat, index) => (
     <div key={index}>
-      <span className={chat.event}>{chat.from}</span> {chat.msg}
+      <span className={chat.event}>{chat.from}</span>: {chat.msg}
     </div>
   ));
 
