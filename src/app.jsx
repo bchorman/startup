@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './app.css';
 import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
 import { About } from './about/about';
-import { Chat } from './chat/chat';
+import { Chat, ChatClient } from './chat/chat';
 import { Home } from './home/home';
 import { Login } from './login/login';
 import { AuthState } from './login/authState';
@@ -69,7 +69,7 @@ export default function App() {
                     <Routes>
                         <Route path='/' element={<Home authState={authState}/>} exact />
                         <Route path='/about' element={<About />} />
-                        <Route path='/chat' element={<Chat />} />
+                        <Route path='/chat' element={<Chat webSocket={new ChatClient()} />} />
                         <Route
                             path='/login'
                             element={

@@ -3,13 +3,14 @@ const bcrypt = require('bcryptjs');
 const express = require('express');
 const uuid = require('uuid');
 const DB = require('./database.js');
+const { WebSocketServer } = require('ws');
 
 const app = express();
 const authCookieName = 'token';
 
 const port = process.argv.length > 2 ? process.argv[2] : 4000;
 
-app.listen(port, () => {
+server = app.listen(port, () => {
   console.log(`Listening on port ${port}`)
 })
 
@@ -19,6 +20,33 @@ app.use(express.static('public'));
 
 let apiRouter = express.Router();
 app.use(`/api`, apiRouter);
+
+const socketServer = new WebSocketServer({ server });
+
+socketServer.on('connection', (socket) => {
+  socket.isAlive = true;
+
+  socket.on('message', function message(data) {
+    socketServer.clients.forEach(function each(client) {
+      if (client !== socket && client.readyState === WebSocket.OPEN) {
+        client.send(data);
+      }
+    });
+  });
+
+  socket.on('pong', () => {
+    socket.isAlive = true;
+  });
+});
+
+setInterval(() => {
+  socketServer.clients.forEach(function each(client) {
+    if (client.isAlive === false) return client.terminate();
+
+    client.isAlive = false;
+    client.ping()
+  });
+}, 10000);
 
 // create a user
 apiRouter.post('/auth/create', async (req, res) => {
