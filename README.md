@@ -94,3 +94,12 @@ For this deliverable, I created a MongoDB database to store user information and
 - [x] **MongoDB database** - all data is stored in database
 - [x] **Credentials in database** - done
 - [x] **Messages in database** - done, will be removed in future
+
+## WebSocket Deliverable
+
+For this deliverable, I used a WebSocket to implement the chat feature of the site.
+
+- [x] **Backend listens for WebSocket connection** - done!
+- [x] **Frontend makes WebSocket connection** - done!
+- [x] **Data sent over WebSocket connection** - done!
+- [x] **Realtime data displayed** - when a user sends a message, all other users can see the message
